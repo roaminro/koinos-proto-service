@@ -60,7 +60,9 @@ serve(async (request: Request) => {
       }
     }
 
-    return json(decodedOperations)
+    return json({
+      decodedOperations
+    })
   } catch (error) {
     return formatError(error);
   }

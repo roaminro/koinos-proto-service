@@ -336,19 +336,21 @@ curl  -X POST \
 
 Result:
 ```bash
-[
-  {
-    "call_contract": {
-      "contract_id": "19JntSm8pSNETT9aHTwAUHC5RMoaSmgZPJ",
-      "entry_point": "transfer",
-      "args": {
-        "from": "1PfHB9SFTiM7vmZvMNeb9rY8adD8ZcUrtZ",
-        "to": "1KwM9wFJ9u9qBgeAEs5v32GyB1EQ2bZQBB",
-        "value": "100000000000"
-      }
-    }
-  }
-]
+{
+    "decodedOperations": [
+        {
+            "call_contract": {
+            "contract_id": "19JntSm8pSNETT9aHTwAUHC5RMoaSmgZPJ",
+            "entry_point": "transfer",
+            "args": {
+                "from": "1PfHB9SFTiM7vmZvMNeb9rY8adD8ZcUrtZ",
+                "to": "1KwM9wFJ9u9qBgeAEs5v32GyB1EQ2bZQBB",
+                "value": "100000000000"
+            }
+            }
+        }
+    ]
+}
 ```
 
 ## `functions/v1/decode-events`
@@ -405,36 +407,38 @@ curl  -X POST \
 
 Result:
 ```bash
-[
-  {
-    "sequence": 2,
-    "source": "19JntSm8pSNETT9aHTwAUHC5RMoaSmgZPJ",
-    "name": "koinos.contracts.token.transfer_event",
-    "data": {
-      "from": "1EVi7yBk44V6nwxdNtumXQtzFcHsQ74VMt",
-      "to": "19PAo2nmzaUWdDfez9HmaaWUeYD2KxxBsP",
-      "value": "2000000"
-    },
-    "impacted": [
-      "19PAo2nmzaUWdDfez9HmaaWUeYD2KxxBsP",
-      "1EVi7yBk44V6nwxdNtumXQtzFcHsQ74VMt"
+{
+    "decodedEvents": [
+        {
+            "sequence": 2,
+            "source": "19JntSm8pSNETT9aHTwAUHC5RMoaSmgZPJ",
+            "name": "koinos.contracts.token.transfer_event",
+            "data": {
+            "from": "1EVi7yBk44V6nwxdNtumXQtzFcHsQ74VMt",
+            "to": "19PAo2nmzaUWdDfez9HmaaWUeYD2KxxBsP",
+            "value": "2000000"
+            },
+            "impacted": [
+            "19PAo2nmzaUWdDfez9HmaaWUeYD2KxxBsP",
+            "1EVi7yBk44V6nwxdNtumXQtzFcHsQ74VMt"
+            ]
+        },
+        {
+            "sequence": 3,
+            "source": "1JZqj7dDrK5LzvdJgufYBJNUFo88xBoWC8",
+            "name": "koinos.contracts.token.transfer_event",
+            "data": {
+            "from": "1FH26byhDERA3GiaSS6EmfVoYAeUp3CeRv",
+            "to": "1EVi7yBk44V6nwxdNtumXQtzFcHsQ74VMt",
+            "value": "1000000"
+            },
+            "impacted": [
+            "1EVi7yBk44V6nwxdNtumXQtzFcHsQ74VMt",
+            "1FH26byhDERA3GiaSS6EmfVoYAeUp3CeRv"
+            ]
+        }
     ]
-  },
-  {
-    "sequence": 3,
-    "source": "1JZqj7dDrK5LzvdJgufYBJNUFo88xBoWC8",
-    "name": "koinos.contracts.token.transfer_event",
-    "data": {
-      "from": "1FH26byhDERA3GiaSS6EmfVoYAeUp3CeRv",
-      "to": "1EVi7yBk44V6nwxdNtumXQtzFcHsQ74VMt",
-      "value": "1000000"
-    },
-    "impacted": [
-      "1EVi7yBk44V6nwxdNtumXQtzFcHsQ74VMt",
-      "1FH26byhDERA3GiaSS6EmfVoYAeUp3CeRv"
-    ]
-  }
-]
+}
 ```
 
 ### Development

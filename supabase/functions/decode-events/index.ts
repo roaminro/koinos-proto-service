@@ -55,7 +55,9 @@ serve(async (request: Request) => {
       }
     }
 
-    return json(decodedEvents)
+    return json({
+      decodedEvents
+    })
   } catch (error) {
     return formatError(error);
   }
