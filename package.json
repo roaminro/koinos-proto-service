@@ -1,0 +1,14 @@
+{
+  "name": "koinos-proto-service",
+  "version": "1.0.0",
+  "license": "MIT",
+  "devDependencies": {
+    "supabase": "^1.68.6"
+  },
+  "scripts": {
+    "supabase:start": "supabase start",
+    "supabase:stop": "supabase stop",
+    "supabase:serve-functions": "supabase functions serve --no-verify-jwt --env-file ./supabase/functions/.env.local",
+    "supabase:generate-types": "supabase gen types typescript --local > supabase/types/database.types.ts"
+  }
+}
